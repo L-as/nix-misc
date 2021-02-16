@@ -2,7 +2,7 @@
 
 writeScriptBin "claybox"
 ''
-#!${ruby}/bin/ruby
+#!${ruby}/bin/ruby --disable=gems
 
 require "open3"
 
@@ -60,8 +60,6 @@ arity = {
 	"--cap-add" => 1,
 	"--cap-drop" => 1,
 }
-
-puts ARGV
 
 oargs = ARGV
 args = []
