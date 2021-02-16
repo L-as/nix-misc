@@ -1,8 +1,9 @@
-{ writeScriptBin, nix, bubblewrap, ruby }:
+{ writeScriptBin, coreutils, nix, bubblewrap, ruby }:
 
 writeScriptBin "claybox"
 ''
-#!${ruby}/bin/ruby --disable=gems
+#!${coreutils}/bin/env -S ${ruby}/bin/ruby --disable=gems -EUTF-8
+# encoding: UTF-8
 
 require "open3"
 
