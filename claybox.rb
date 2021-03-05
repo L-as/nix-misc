@@ -82,7 +82,7 @@ while i < oargs.length do
 			if p
 				paths << p[1]
 			end
-		rescue Errno::ENOENT
+		rescue
 		end
 	when "--"
 		if oargs[i+1].include? "/" then
@@ -95,7 +95,7 @@ while i < oargs.length do
 					oargs[i+1] = symlink
 					args.push("--symlink", rp, symlink)
 				end
-			rescue Errno::ENOENT
+			rescue
 			end
 		end
 		break
